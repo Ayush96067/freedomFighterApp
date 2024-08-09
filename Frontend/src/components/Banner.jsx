@@ -25,7 +25,7 @@ function Banner() {
             to="./signup"
             className={`btn mt-6 glass hover:bg-gray-800 hover:text-white    text-gray-700 dark:text-lime-300 text-xl font-fredoka`}
           >
-            Sign Up
+            Get Started
           </Link>
         </div>
       </div>

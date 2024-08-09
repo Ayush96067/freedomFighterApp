@@ -1,8 +1,23 @@
-import React from "react";
-import list from "../../public/list.json";
+import React, { useEffect, useState } from "react";
 import Fight from "./Fight";
+import axios from "axios";
 
 function More() {
+  const [fighter, setFighter] = useState([]);
+
+  useEffect(() => {
+    const getFighter = async () => {
+      try {
+        const res = await axios.get("http://localhost:3000/fight");
+        setFighter(res.data);
+      } catch (error) {
+        console.log("Error : 😂 ", error);
+      }
+    };
+
+    getFighter();
+  }, []);
+
   return (
     <>
       <div
@@ -25,7 +40,7 @@ function More() {
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3">
-          {list.map((item) => {
+          {fighter.map((item) => {
             return <Fight item={item} key={item.id} />;
           })}
         </div>

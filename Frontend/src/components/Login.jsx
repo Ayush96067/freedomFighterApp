@@ -1,15 +1,47 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 function Login() {
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    const userInfo = {
+      email: data.email,
+      password: data.password,
+    };
+    await axios
+      .post("http://localhost:3000/user/login", userInfo)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data) {
+          toast.success("Login successfull");
+          navigate(from, { replace: true });
+          document.getElementById("my_modal_3").close();
+          setTimeout(() => {
+            window.location.reload();
+            localStorage.setItem("Users", JSON.stringify(res.data.user));
+          }, 1000);
+        }
+      })
+      .catch((err) => {
+        if (err.response) {
+          toast.error("Invalid email or password");
+          document.getElementById("my_modal_3").close();
+          setTimeout(() => {}, 2000);
+        }
+      });
+    document.querySelector(".input1").value = "";
+    document.querySelector(".input2").value = "";
+  };
 
   return (
     <div>
@@ -19,6 +51,7 @@ function Login() {
             <Link
               to="/"
               className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+              onClick={() => document.getElementById("my_modal_3").close()}
             >
               X
             </Link>
@@ -30,7 +63,7 @@ function Login() {
                 <input
                   type="email"
                   placeholder="Enter your email...."
-                  className="my-auto md:ml-20 p-1 w-auto md:p-3 text-white dark:text-black dark:bg-white rounded-md"
+                  className="my-auto input1 md:ml-20 p-1 w-auto md:p-3 text-white dark:text-black dark:bg-white rounded-md"
                   {...register("email", { required: true })}
                 />
                 <br />
@@ -46,7 +79,7 @@ function Login() {
                   type="password"
                   placeholder="xxxxxxxx"
                   {...register("password", { required: true })}
-                  className="my-auto md:ml-11 w-auto p-1 md:p-3 text-white dark:text-black dark:bg-white rounded-md"
+                  className="my-auto input2 md:ml-11 w-auto p-1 md:p-3 text-white dark:text-black dark:bg-white rounded-md"
                 />
                 <br />
                 {errors.password && (

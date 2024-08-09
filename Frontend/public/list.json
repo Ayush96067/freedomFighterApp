@@ -3,7 +3,6 @@
     "id": 1,
     "name": "Veer savarkar",
     "title": "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Molestias itaque cum corpo Lorem ipsum dolor sit, amet consectetur adipisicing elit.Molestias itaque c",
-    "price": 50,
     "category": "ff",
     "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202306/facebook-340070267_1153938198605802_2229007796944708143_n-sixteen_nine-_3.jpg?VersionId=EkQg_LzwBz91yi_RK03WJylAtgH.eo9S&size=690:388"
   },
@@ -11,7 +10,6 @@
     "id": 2,
     "name": "Subash Chandra Bose",
     "title": "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Molestias itaque cum corpo",
-    "price": 50,
     "category": "ff",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4ZTa4TbKD4QX_acAdvHTWUYm_ZTyP-Tj8YqAxjbIQmL-mn9XY"
   },
@@ -19,7 +17,6 @@
     "id": 3,
     "name": "Lala Lajpath Roy",
     "title": "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Molestias itaque cum corpo",
-    "price": 50,
     "category": "ff",
     "image": "https://wd-image.webdunia.com/image-conversion/process-aws.php?url=https://nonprod-media.webdunia.com/public_html/_media/hi/img/article/2022-11/17/full/1668669898-897.jpg&w=&h=&outtype=webp"
   },
@@ -27,7 +24,6 @@
     "id": 4,
     "name": "Chandra Shekar Azad",
     "title": "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Molestias itaque cum corpo",
-    "price": 50,
     "category": "ff",
     "image": "https://m.economictimes.com/thumb/msid-98266696,width-1600,height-900,resizemode-4,imgsize-12838/chandra-shekhar-azad.jpg"
   },
@@ -35,7 +31,6 @@
     "id": 5,
     "name": "Bhagat Singh",
     "title": "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Molestias itaque cum corpo",
-    "price": 50,
     "category": "ff",
     "image": "https://i.pinimg.com/originals/c0/cb/2a/c0cb2a8be5c9938dd2c60bd9a560a450.jpg"
   },
@@ -43,7 +38,6 @@
     "id": 6,
     "name": "Uddham Singh",
     "title": "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Molestias itaque cum corpo",
-    "price": 50,
     "category": "ff",
     "image": "https://cdn.prod.website-files.com/6586ad1766809383c71cd41e/658b71a8eedd655127136a39_20-Shaheed-Udham-Singh.jpeg"
   }

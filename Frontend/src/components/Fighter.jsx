@@ -1,15 +1,32 @@
-import React from "react";
-import list from "../../public/list.json";
+import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axios from "axios";
+
 import Slider from "react-slick";
 import Fight from "./Fight";
 
 function Fighter() {
-  const filterData = list.filter((data) => data.category === "ff");
+  const [fighter, setFighter] = useState([]);
+
+  useEffect(() => {
+    const getFighter = async () => {
+      try {
+        const res = await axios.get("http://localhost:3000/fight");
+        console.log(res.data);
+        setFighter(res.data);
+      } catch (error) {
+        console.log("Error : 😂 ", error);
+      }
+    };
+
+    getFighter();
+  }, []);
+
+  // const filterData = fighter.filter((data) => data.category === "ff");
   var settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 2,
@@ -55,7 +72,7 @@ function Fighter() {
           </p>
         </div>
         <Slider {...settings}>
-          {filterData.map((item) => (
+          {fighter.map((item) => (
             <Fight item={item} key={item.id} />
           ))}
         </Slider>
