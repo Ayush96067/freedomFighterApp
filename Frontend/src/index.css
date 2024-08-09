@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn.glass {
+  background-color: rgba(130, 130, 130, 0.555);
+}
+
+.darkHover li a:hover {
+  background-color: #ccff00;
+  color: black;
+  box-shadow: 0px 0px 10px 3px #39ff14;
+}
+
+.lightHover li a:hover {
+  background-color: #ffffff;
+  color: black;
+  box-shadow: 0px 0px 10px 4px #ccff00;
+}
